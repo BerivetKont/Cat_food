@@ -1,5 +1,8 @@
 # Cat_food
-funbox.ru
+[Верстка](https://jsfiddle.net/BerivetKont/5Lnv6raq/6/)
+Courtesy fo funbox.ru, adaptive, cross tested!.
+Comments and improvements are welcome.
+
 1. Фон занимает всю площадь экрана, блок находится по центру вертикально и горизонтально.
 2. На планшетах упаковки располагаются треугольником, на смартфонах друг под другом.
 3. Информация о продукте может меняться.
