@@ -1,5 +1,5 @@
 # Cat_food
-[Верстка](https://jsfiddle.net/BerivetKont/torqsjcm/4/)
+[Верстка](https://codepen.io/BerivetKont/pen/QWBrwyV)
 Courtesy of funbox.ru, adaptive, cross tested (Chrome, Firefox, Safari and Edge)!
 Comments and improvements are welcome.
 
