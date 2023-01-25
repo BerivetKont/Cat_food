@@ -1,7 +1,7 @@
 /*Десктоп*/
 
 body{
-    background-image: url("бэкграунд.png"), url("Тень.png");;
+    background-image: url("бэкграунд.png"), url("Тень.png");
     background-size: contain;
     background-blend-mode: multiply;
 }
