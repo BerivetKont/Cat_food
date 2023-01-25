@@ -1,6 +1,6 @@
 # Cat_food
 [Верстка](https://jsfiddle.net/BerivetKont/5Lnv6raq/6/)
-Courtesy fo funbox.ru, adaptive, cross tested (Chrome, Firefox, Safari)!
+Courtesy fo funbox.ru, adaptive, cross tested (Chrome, Firefox, Safariб Edge)!
 Comments and improvements are welcome.
 
 1. Фон занимает всю площадь экрана, блок находится по центру вертикально и горизонтально.
