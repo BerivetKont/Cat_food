@@ -1,7 +1,7 @@
 /*Десктоп*/
 
 body{
-    background: url("бэкграунд.png"), url("Тень.png");
+    background-image: url("бэкграунд.png"), url("Тень.png");;
     background-size: contain;
     background-blend-mode: multiply;
 }
@@ -16,7 +16,8 @@ header{
     margin: 0 auto;
 }
 header p{
-    box-shadow: 0px 1px 1px 0px #000000;
+    -webkit-box-shadow: 0px 1px 1px 0px #000000;
+            box-shadow: 0px 1px 1px 0px #000000;
     color: #ffffff;
     text-align: center;
     font-size: 36px;
@@ -26,14 +27,19 @@ header p{
     margin: 0;
 }
 article{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto 80px auto 80px auto;
     grid-template-columns: auto auto auto;
     margin-top: 24px;
     padding: 0 80px;
-    column-gap: 80px;
+    -webkit-column-gap: 80px;
+       -moz-column-gap: 80px;
+            column-gap: 80px;
 }
 .article_grid {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: 509px;
     width: 320px;    
     }
@@ -50,31 +56,31 @@ article h1,h3{
 #hoverBorder, #hoverBorder1, #hoverBorder2{
     height: 509px;
     width: 320px; 
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+            box-sizing: border-box;
 }
-.ingredient{
-    box-sizing: border-box;
-    border-radius: 10px;
+.outside_ingredient {
     position: relative;
+      height: 480px;
+      width: 320px;
+      border-radius: 12px;
+      background: #1698D9;  
+      -webkit-clip-path: polygon(15% 0, 100% 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 100%, 0 10%);  
+              clip-path: polygon(15% 0, 100% 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 100%, 0 10%);
+  z-index: 1;  
+}
+  .ingredient {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    z-index: 2;
+    border-radius: 12px;
+    background: #f2f2f2;
+    -webkit-clip-path: polygon(15% 0, 100% 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 100%, 0 10%);
+            clip-path: polygon(15% 0, 100% 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 100%, 0 10%);
     overflow: hidden;
-    height: 480px;
-    padding-bottom: 14px;
-
-    --all:0;
-    --top-left: 20px;
-    --y: #1698d9;
-    border: 4px solid var(--y);
-    background:
-       linear-gradient( 135deg, var(--y) 0 calc(var(--top-left,var(--all)) + 5px)    ,transparent 0) top left    /50% 50%, var(--img,#f2f2f2);
-    background-origin:border-box;
-    background-repeat:no-repeat;
-    -webkit-mask:
-       linear-gradient(  45deg, transparent 0 var(--bottom-left,var(--all)) ,#fff 0) bottom left,
-       linear-gradient( -45deg, transparent 0 var(--bottom-right,var(--all)),#fff 0) bottom right,
-       linear-gradient( 135deg, transparent 0 var(--top-left,var(--all))    ,#fff 0) top left,
-       linear-gradient(-135deg, transparent 0 var(--top-right,var(--all))   ,#fff 0) top right;
-    -webkit-mask-size:50.5% 50.5%;
-    -webkit-mask-repeat:no-repeat;
   }
 .ingredient_text{
     margin: 0 51px;
@@ -99,6 +105,7 @@ article h1,h3{
     height: 80px;
     border-radius: 50%;
     position: absolute;
+    z-index: 4;
     right: 16px;
     bottom: 16px;
     padding: 2px;
@@ -116,7 +123,7 @@ article h1,h3{
     content: url("Кот.png"); 
     height: 368px;
     width: 360px;
-    z-index: -1;
+    z-index: 3;
 }
 .footer p{
     font-size: 13px;
@@ -141,9 +148,13 @@ article h1,h3{
         width: auto;
         }
     article{
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: auto 40px auto;
         grid-template-columns: auto auto;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         gap: 40px;
         width: auto;
         }
@@ -151,37 +162,51 @@ article h1,h3{
         width: auto;
     }
     #hoverBorder{
-        transform: translate(50%) ;
+        -webkit-transform: translate(50%) ;
+            -ms-transform: translate(50%) ;
+                transform: translate(50%) ;
     }
     #hoverBorder1{
-        transform: translate(calc(-100% - 40px), calc(100% + 40px) ); 
+        -webkit-transform: translate(calc(-100% - 40px), calc(100% + 40px) );
+            -ms-transform: translate(calc(-100% - 40px), calc(100% + 40px) );
+                transform: translate(calc(-100% - 40px), calc(100% + 40px) ); 
     }
     #hoverBorder2{
-        transform: translate(calc(100% + 40px));
+        -webkit-transform: translate(calc(100% + 40px));
+            -ms-transform: translate(calc(100% + 40px));
+                transform: translate(calc(100% + 40px));
     }
+
 }
+
 
 /* Телефон */
 @media screen and (max-width: 600px) {
-    body{
-    padding: 36px;
-    margin: 0 auto;
-    width: auto;
-    height: auto;   
+    body {
+        padding: 36px;
+        margin: 0 auto;
+        width: auto;
+        height: auto;
     }
-    article{
-    display: grid;
-    gap: 40px;
-    grid-template-columns: auto;
-    margin: 24px auto;
-    padding: 10px 0;
-    width: 320px;     
+    article {
+        display: -ms-grid;
+        display: grid;
+        gap: 40px;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+        margin: 24px auto;
+        padding: 10px 0;
+        width: 320px;
     }
-    header{
-    width: auto;
-    padding: 0 29px;
+    header {
+        width: auto;
+        padding: 0 29px;
     }
-#hoverBorder, #hoverBorder1, #hoverBorder2{
-    transform: translate(0);
+    #hoverBorder, #hoverBorder1, #hoverBorder2 {
+        transform: translate(0);
+        -ms-transform: translate(0);
+        -webkit-transform: translate(0);
+        -o-transform: translate(0);
+        -moz-transform: translate(0);
     }
 }
