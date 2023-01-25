@@ -5,6 +5,7 @@
 4. Unselect
 */
 
+
 // Фуа-Гра
 // hover
 function hoverBorderOn(a) {
@@ -16,22 +17,27 @@ function hoverBorderOn(a) {
     document.getElementById("article_grid").style.transform = "";
   }
   //select, hover upon select, unselect
-  function cellClick() {
-    const cellBackground = document.getElementById("fois_gras");
-    const para1TextOrColor = document.getElementById("para1");
-    const heading1Color = document.getElementById("heading1");
-    const heading2Color = document.getElementById("heading2");
-    const para2Color = document.getElementById("para2");
-    const catCellBackground = document.getElementById("cat");
-    const quantity1Background = document.getElementById("quantity1");
-    const footer1Text = document.getElementById("footer1");
-    let text = footer1Text.innerText;
+
+  function cellClick(){
   
-    if (text.includes("чего сидишь?")) {
+    let cellBackground = document.getElementById("fois_gras");
+    let para1TextOrColor = document.getElementById("para1");
+    let heading1Color = document.getElementById("heading1");
+    let heading2Color = document.getElementById("heading2");
+    let para2Color = document.getElementById("para2");
+    let catCellBackground = document.getElementById("cat");
+    let quantity1Background = document.getElementById("quantity1");
+    let footer1Text = document.getElementById("footer1");
+    let text = footer1Text.innerText;
+    const array = ["чего сидишь? Порадуй котэ,", "Печень утки разварная с артишоками.", "Печалька, с фуа-гра закончился."];
+    let next = array[0];
+    
+    switch (next){
+      case array[0]: 
       //select
       quantity1Background.style.background = "#D91667";
-      footer1Text.innerText = "Печень утки разварная с артишоками.";
-      cellBackground.setAttribute("style", "--y:#D91667; ");
+      footer1Text.innerText = array[1];
+      cellBackground.style.background =  "#D91667";
       // hover after select
       document.getElementById("hoverBorder").onmouseenter = function() {
         hoverBorderTextChange1();
@@ -47,19 +53,24 @@ function hoverBorderOn(a) {
         para1TextOrColor.innerText = "Сказочное заморское яство";
         para1TextOrColor.style.color = "#666666";
       }
-    } else if (text.includes("Печень утки")) {
+
+     break;
+   
+    }
+        switch (text) {
+      case array[1]:
       //unselect
-      cellBackground.setAttribute("style", "--y:#b3b3b3; ");
-      cellBackground.style.filter = "brightness(110%)";
+      cellBackground.style.background =  "#B3B3B3";
+      cellBackground.style.filter = "brightness(100%)";
       para1TextOrColor.innerText = "Сказочное заморское яство";
-      para1TextOrColor.style.color = "#b3b3b3";
-      heading1Color.style.color = "#b3b3b3";
-      heading2Color.style.color = "#b3b3b3";
-      para2Color.style.color = "#b3b3b3";
+      para1TextOrColor.style.color = "#B3B3B3";
+      heading1Color.style.color = "#B3B3B3";
+      heading2Color.style.color = "#B3B3B3";
+      para2Color.style.color = "#B3B3B3";
       catCellBackground.style.filter = "opacity(65%)";
-      quantity1Background.style.background = "#b3b3b3";
+      quantity1Background.style.background = "#B3B3B3";
       quantity1Background.style.filter = "brightness(90%)";
-      footer1Text.innerText = "Печалька, с фуа-гра закончился.";
+      footer1Text.innerText = array[2];
       //disables hover after select
       document.getElementById("hoverBorder").onmouseenter = function() {
         hoverBorderTextChange1();
@@ -73,10 +84,11 @@ function hoverBorderOn(a) {
       function hoverBorderTextChange2() {
         para1TextOrColor.innerText = "Сказочное заморское яство";
       }
-  
-    } else if (text.includes("Печалька")) {
+    break;}
+    switch (text){
+      case array[2]:
       //switches between select and unselect
-      cellBackground.setAttribute("style", "--y:#D91667; ");
+      cellBackground.style.background =  "#D91667";
       cellBackground.style.filter = "";
       para1TextOrColor.style.color = "";
       heading1Color.style.color = "";
@@ -101,10 +113,9 @@ function hoverBorderOn(a) {
         para1TextOrColor.innerText = "Сказочное заморское яство";
         para1TextOrColor.style.color = "#666666";
       }
-    }
-  }
-  
-  // Рыба
+    break;
+  }}
+   // Рыба
   // hover
   function hoverBorderOn1(a) {
     a.style.border = "1px #1698D9 solid";
@@ -124,13 +135,17 @@ function hoverBorderOn(a) {
     const catCellBackground_fish = document.getElementById("cat1");
     const quantity1Background_fish = document.getElementById("quantity11");
     const footer1Text_fish = document.getElementById("footer11");
-    let textFish = footer1Text_fish.innerText;
-  
-    if (textFish.includes("чего сидишь?")) {
+    const textFish = footer1Text_fish.innerText;
+    const arrayFish = ["чего сидишь? Порадуй котэ,", "Головы щучьи с чесноком да свежайшая сёмгушка.", "Печалька, с рыбой закончился."];
+    const nextFish = arrayFish[0];
+
+ switch (nextFish) {
+      case arrayFish[0]:
       //select
       quantity1Background_fish.style.background = "#D91667";
-      footer1Text_fish.innerText = "Головы щучьи с чесноком да свежайшая сёмгушка.";
-      cellBackground_fish.setAttribute("style", "--y:#D91667; ");
+      footer1Text_fish.innerText = arrayFish[1];
+      cellBackground_fish.style.background =  "#D91667";
+      
       // hover after select
       document.getElementById("hoverBorder1").onmouseenter = function() {
         hoverBorderTextChange_fish1();
@@ -146,9 +161,12 @@ function hoverBorderOn(a) {
         para1TextOrColor_fish.innerText = "Сказочное заморское яство";
         para1TextOrColor_fish.style.color = "#666666";
       }
-    } else if (textFish.includes("Головы щучьи")) {
+    break;
+} 
+switch (textFish) {
+	case arrayFish[1]:
       //unselect
-      cellBackground_fish.setAttribute("style", "--y:#b3b3b3; ");
+      cellBackground_fish.style.background = "#b3b3b3";
       cellBackground_fish.style.filter = "brightness(110%)";
       para1TextOrColor_fish.innerText = "Сказочное заморское яство";
       para1TextOrColor_fish.style.color = "#b3b3b3";
@@ -158,7 +176,7 @@ function hoverBorderOn(a) {
       catCellBackground_fish.style.filter = "opacity(65%)";
       quantity1Background_fish.style.background = "#b3b3b3";
       quantity1Background_fish.style.filter = "brightness(90%)";
-      footer1Text_fish.innerText = "Печалька, с рыбой закончился.";
+      footer1Text_fish.innerText = arrayFish[2];
       //disables hover after select
       document.getElementById("hoverBorder1").onmouseenter = function() {
         hoverBorderTextChange_fish1()
@@ -172,10 +190,12 @@ function hoverBorderOn(a) {
       function hoverBorderTextChange_fish2() {
         para1TextOrColor_fish.innerText = "Сказочное заморское яство";
       }
-  
-    } else if (textFish.includes("Печалька")) {
+  break;
+    } 
+switch (textFish) {
+	case arrayFish[2]:
       //switches between select and unselect
-      cellBackground_fish.setAttribute("style", "--y:#D91667; ");
+      cellBackground_fish.style.background = "#D91667";
       cellBackground_fish.style.filter = "";
       para1TextOrColor_fish.style.color = "";
       heading1Color_fish.style.color = "";
@@ -184,7 +204,7 @@ function hoverBorderOn(a) {
       catCellBackground_fish.style.filter = "";
       quantity1Background_fish.style.background = "#D91667";
       quantity1Background_fish.style.filter = "";
-      footer1Text_fish.innerText = "Головы щучьи с чесноком да свежайшая сёмгушка.";
+      footer1Text_fish.innerText = arrayFish[1];
       //hover after select 
       document.getElementById("hoverBorder1").onmouseenter = function() {
         hoverBorderTextChange_fish1()
@@ -200,10 +220,10 @@ function hoverBorderOn(a) {
         para1TextOrColor_fish.innerText = "Сказочное заморское яство";
         para1TextOrColor_fish.style.color = "#666666";
       }
-    }
-  }
-  
-  // Курица
+   break;
+ }}
+ 
+  //Курица
   // hover
   function hoverBorderOn2(a) {
     a.style.border = "1px #1698D9 solid";
@@ -223,13 +243,16 @@ function hoverBorderOn(a) {
     const catCellBackground_chicken = document.getElementById("cat2");
     const quantity1Background_chicken = document.getElementById("quantity12");
     const footer1Text_chicken = document.getElementById("footer12");
-    let textChicken = footer1Text_chicken.innerText;
-  
-    if (textChicken.includes("чего сидишь?")) {
-      //select
+    const textChicken = footer1Text_chicken.innerText;
+    const arrayChicken = ["чего сидишь? Порадуй котэ,", "Филе из цыплят с трюфелями в бульоне.", "Печалька, с курой закончился."];
+    const nextChicken = arrayChicken[0];
+
+    switch (nextChicken) {
+	case arrayChicken[0]:      
+	//select
       quantity1Background_chicken.style.background = "#D91667";
-      footer1Text_chicken.innerText = "Филе из цыплят с трюфелями в бульоне.";
-      cellBackground_chicken.setAttribute("style", "--y:#D91667; ");
+      footer1Text_chicken.innerText = arrayChicken[1];
+      cellBackground_chicken.style.background = "#D91667";
       // hover after select
       document.getElementById("hoverBorder2").onmouseenter = function() {
         hoverBorderTextChange_chicken1()
@@ -245,9 +268,11 @@ function hoverBorderOn(a) {
         para1TextOrColor_chicken.innerText = "Сказочное заморское яство";
         para1TextOrColor_chicken.style.color = "#666666";
       }
-    } else if (textChicken.includes("Филе из цыплят")) {
+break;
+    } switch (textChicken) {
+	case arrayChicken[1]:
       //unselect
-      cellBackground_chicken.setAttribute("style", "--y:#b3b3b3; ");
+      cellBackground_chicken.style.background = "#b3b3b3";
       cellBackground_chicken.style.filter = "brightness(110%)";
       para1TextOrColor_chicken.innerText = "Сказочное заморское яство";
       para1TextOrColor_chicken.style.color = "#b3b3b3";
@@ -257,7 +282,7 @@ function hoverBorderOn(a) {
       catCellBackground_chicken.style.filter = "opacity(65%)";
       quantity1Background_chicken.style.background = "#b3b3b3";
       quantity1Background_chicken.style.filter = "brightness(90%)";
-      footer1Text_chicken.innerText = "Печалька, с курой закончился.";
+      footer1Text_chicken.innerText = arrayChicken[2];
       //disables hover after select
       document.getElementById("hoverBorder2").onmouseenter = function() {
         hoverBorderTextChange_chicken1()
@@ -271,10 +296,12 @@ function hoverBorderOn(a) {
       function hoverBorderTextChange_chicken2() {
         para1TextOrColor_chicken.innerText = "Сказочное заморское яство";
       }
-  
-    } else if (textChicken.includes("Печалька")) {
+  break;
+    } 
+    switch(textChicken ) {
+case arrayChicken[2]:
       //switches between select and unselect
-      cellBackground_chicken.setAttribute("style", "--y:#D91667; ");
+            cellBackground_chicken.style.background = "#D91667";
       cellBackground_chicken.style.filter = "";
       para1TextOrColor_chicken.style.color = "";
       heading1Color_chicken.style.color = "";
@@ -299,5 +326,6 @@ function hoverBorderOn(a) {
         para1TextOrColor_chicken.innerText = "Сказочное заморское яство";
         para1TextOrColor_chicken.style.color = "#666666";
       }
+break;
     }
   }
