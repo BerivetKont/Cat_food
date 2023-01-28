@@ -1,4 +1,4 @@
-/*Десктоп*/
+
 
 body {
     background-image:url("бэкграунд.png"),url("Тень.png");
@@ -16,8 +16,8 @@ header {
     margin:0 auto;
 }
 header p {
-    -webkit-box-shadow:0 1px 1px 0 #000000;
-    box-shadow:0 1px 1px 0 #000000;
+    -webkit-box-shadow:0px 1px 1px 0px #000000;
+    box-shadow:0px 1px 1px 0px #000000;
     color:#ffffff;
     text-align:center;
     font-size:36px;
@@ -27,18 +27,13 @@ header p {
     margin:0;
 }
 article {
-    display:-ms-grid;
-    display:grid;
-    -ms-grid-columns:auto 80px auto 80px auto;
-    grid-template-columns:auto auto auto;
-    margin-top:24px;
-    padding:0 80px;
-    -webkit-column-gap:80px;
-    -moz-column-gap:80px;
-    -ms-column-gap:80px;
-    column-gap:80px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    padding:0 40px;
+    width:1200px;
 }
-.article_grid {
+.article_grid,#hoverBorder,#hoverBorder1,#hoverBorder2 {
     -webkit-box-sizing:border-box;
     box-sizing:border-box;
     height:509px;
@@ -53,12 +48,6 @@ article h1,h3 {
     font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;
     font-weight:700;
     color:#000000;
-}
-#hoverBorder,#hoverBorder1,#hoverBorder2 {
-    height:509px;
-    width:320px;
-    -webkit-box-sizing:border-box;
-    box-sizing:border-box;
 }
 .outside_ingredient {
     position:relative;
@@ -146,36 +135,19 @@ article h1,h3 {
 }
 section {
     width:auto;
+    padding:auto;
 }
 article {
-    display:-ms-grid;
-    display:grid;
-    -ms-grid-columns:auto 40px auto;
-    grid-template-columns:auto auto;
-    -webkit-box-pack:center;
-    -moz-box-pack:center;
-    -ms-flex-pack:center;
-    justify-content:center;
-    gap:40px;
+    display:flex;
     width:auto;
+    justify-content:space-around;
+    flex-wrap:wrap;
 }
 header {
     width:auto;
 }
-#hoverBorder {
-    -webkit-transform:translate(50%);
-    -ms-transform:translate(50%);
-    transform:translate(50%);
-}
-#hoverBorder1 {
-    -webkit-transform:translate(calc(-100% - 40px),calc(100% + 40px) );
-    -ms-transform:translate(calc(-100% - 40px),calc(100% + 40px) );
-    transform:translate(calc(-100% - 40px),calc(100% + 40px) );
-}
-#hoverBorder2 {
-    -webkit-transform:translate(calc(100% + 40px));
-    -ms-transform:translate(calc(100% + 40px));
-    transform:translate(calc(100% + 40px));
+#hoverBorder,#hoverBorder1,#hoverBorder2 {
+    margin:40px auto;
 }
 }/* Телефон */
 @media screen and (max-width:600px) {
@@ -186,24 +158,18 @@ header {
     height:auto;
 }
 article {
-    display:-ms-grid;
-    display:grid;
-    gap:40px;
-    -ms-grid-columns:auto;
-    grid-template-columns:auto;
-    margin:24px auto;
-    padding:10px 0;
-    width:320px;
-}
-header {
+    display:flex;
     width:auto;
-    padding:0 29px;
+    justify-content:space-around;
+    flex-wrap:wrap;
 }
-#hoverBorder,#hoverBorder1,#hoverBorder2 {
-    -ms-transform:translate(0);
-    -webkit-transform:translate(0);
-    -o-transform:translate(0);
-    -moz-transform:translate(0);
-    transform:translate(0);
+}/* IE11 */
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+    .ingredient,.outside_ingredient {
+    border-top-left-radius:12%;
+}
+.cat {
+    background-image:url("Кот.png");
+    background-size:cover;
 }
 }
